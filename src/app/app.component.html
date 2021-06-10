@@ -1,5 +1,22 @@
-<h1>{{title}}</h1>
 <nav>
-  <a routerLink="/login">Login</a>
+  <div class="vertical-menu"></div>
+    <div class="wrapper">
+        <div class="sidebar">
+            <h3>{{title}}</h3>
+            <ul>
+                <li><a routerLink="/login">Login</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Upis novozaraženih</a></li>
+                <li><a href="#">Pregled novozaraženih</a></li>
+                <li><a href="#">Upis cijepljenih</a></li>
+                <li><a href="#">Pregled cijepljenih</a></li>
+                <li><a href="#">Dodavanje korisnika</a></li>
+                <li id="logout"><a routerLink="/login">logout</a></li>
+            </ul> 
+        </div>
+    </div>
+    <div id="bar">
+      <span id="menu-button" onclick="sidebar()">&#9776;</span>
+    </div>  
 </nav>
 <router-outlet></router-outlet>

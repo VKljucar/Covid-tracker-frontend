@@ -1,0 +1,13 @@
+
+<div class="container">
+  <h2>login</h2>
+  <form>
+    <input type="text" class="email" placeholder="email" #korisnickoIme>
+    <br/>
+    <input type="text" class="pwd" placeholder="password" #lozinka>
+  </form>
+  <br/>
+  <button class="signin" (click)="getUser(korisnickoIme.value, lozinka.value)">
+    <span>sign in</span>
+  </button>
+</div>
