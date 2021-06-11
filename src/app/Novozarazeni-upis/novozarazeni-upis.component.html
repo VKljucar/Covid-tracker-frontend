@@ -1,0 +1,42 @@
+<div class="container">
+    <h2>Upis novozaraženih</h2>
+    <form>
+      <label for="ime" class="col-25">Ime</label>
+      <input type="text" class="ime" name="ime" #ime>
+      <br/>
+      <label for="prezime" class="col-25">Prezime</label>
+      <input type="text" class="prezime" name="prezime" #prezime>
+      <br/>
+      <label for="datRodenja" class="col-25">Datum rođenja</label>
+      <input type="date" class="datum" name="datRodenja" #datRodenja>
+      <br/>
+      <label for="adresa" class="col-25">Adresa</label>
+      <input type="text" class="adresa" name="adresa" #adresa>
+      <br/>
+      <label for="telefon" class="col-25">Telefon</label>
+      <input type="text" class="telefon" name="telefon" #telefon>
+      <br/>
+      <label for="email" class="col-25">Email</label>
+      <input type="text" class="email" name="email" #email>
+      <br/>
+      <div id="hospital">
+      <label for="hospitaliziran" class="col-25">Hospitaliziran</label>
+      <div>
+        <label for="hospitaliziran" id="hosp1" class="hosp">Da</label>
+        <input type="radio" id="hosp" name="hospitaliziran" value="D" #hospitaliziran>
+      </div>
+      <div>
+        <label for="hospitaliziran" class="hosp">Ne</label>
+        <input type="radio" id="hosp" name="hospitaliziran" value="N" #hospitaliziran>
+      </div>
+      </div>
+      <br/>
+      <label for="lokacija" class="col-25" id="lokacija">Lokacija</label>
+      <input type="number" class="lokacija" name="lokacija" #lokacija>
+    </form>
+    <br/>
+    <button class="dodaj"  (click)="add(ime.value, prezime.value, datRodenja.value, adresa.value, telefon.value, email.value, hospitaliziran.value, +lokacija.value); ime.value=''; prezime.value=''; datRodenja.value=''; adresa.value=''; telefon.value=''; email.value=''">
+        <span>+ Dodaj</span>
+    </button>
+  </div>
+  
