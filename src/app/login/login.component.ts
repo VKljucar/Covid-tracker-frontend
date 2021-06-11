@@ -1,6 +1,8 @@
-import { Component, OnInit , Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../user';
 import { LoginService } from '../login.service';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-login',
@@ -8,9 +10,11 @@ import { LoginService } from '../login.service';
     styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent  {
+export class LoginComponent {
 
     users!: User;
+
+    credentials = { korisnickoIme: '', lozinka: '' };
 
     constructor(
         private loginService: LoginService
@@ -19,7 +23,8 @@ export class LoginComponent  {
 
     getUser(korisnickoIme: string, lozinka: string): void {
         this.loginService.getUser(korisnickoIme, lozinka)
-        .subscribe(users => this.users = users);
+            .subscribe(users => this.users = users);
     }
+
 
 }
