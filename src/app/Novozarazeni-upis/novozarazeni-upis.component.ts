@@ -10,7 +10,7 @@ import { NovozarazeniService } from "../novozarazeni.service";
 export class NovozarazeniUpisComponent {
 
     novozarazeni!: Novozarazeni[];
-
+    
     constructor(
         private novozarazeniService: NovozarazeniService
     ){}
@@ -25,6 +25,9 @@ export class NovozarazeniUpisComponent {
         hospitaliziran = hospitaliziran.trim();
         lokacija = lokacija;
         if(!ime || !prezime || !datRodenja || !adresa || !telefon || !email){
+            if (hospitaliziran == 'N'){
+                lokacija = 0;
+            }
             return;
         }
 

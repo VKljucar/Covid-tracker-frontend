@@ -32,7 +32,7 @@
       </div>
       <br/>
       <label for="lokacija" class="col-25" id="lokacija">Lokacija</label>
-      <input type="number" class="lokacija" name="lokacija" #lokacija>
+      <input *ngIf="hospitaliziran.value == 'D'" type="number" class="lokacija" name="lokacija" #lokacija>
     </form>
     <br/>
     <button class="dodaj"  (click)="add(ime.value, prezime.value, datRodenja.value, adresa.value, telefon.value, email.value, hospitaliziran.value, +lokacija.value); ime.value=''; prezime.value=''; datRodenja.value=''; adresa.value=''; telefon.value=''; email.value=''">
