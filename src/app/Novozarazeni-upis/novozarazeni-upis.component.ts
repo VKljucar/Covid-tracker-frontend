@@ -15,7 +15,7 @@ export class NovozarazeniUpisComponent {
         private novozarazeniService: NovozarazeniService
     ){}
 
-    add(ime: string, prezime: string, datRodenja: string, adresa: string, telefon: string, email: string, hospitaliziran: string, lokacija: number){
+    add(osobaId: number, ime: string, prezime: string, datRodenja: string, adresa: string, telefon: string, email: string, hospitaliziran: string, lokacija: number){
         ime = ime.trim();
         prezime = prezime.trim();
         datRodenja = datRodenja.trim();
@@ -31,7 +31,7 @@ export class NovozarazeniUpisComponent {
             return;
         }
 
-        this.novozarazeniService.addNovozarazeni({ime, prezime, datRodenja, adresa, telefon, email, hospitaliziran, lokacija} as Novozarazeni)
+        this.novozarazeniService.addNovozarazeni({osobaId, ime, prezime, datRodenja, adresa, telefon, email, hospitaliziran, lokacija} as Novozarazeni)
             .subscribe(novozarazeni => {
                 this.novozarazeni.push(novozarazeni);
             })

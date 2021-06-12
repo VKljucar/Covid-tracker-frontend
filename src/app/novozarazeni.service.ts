@@ -9,7 +9,7 @@ import { catchError, tap } from "rxjs/operators";
 })
 export class NovozarazeniService {
 
-    private novozarazeniUpisUrl = 'http://localhost:8080/novozarazeni-upis';
+    private novozarazeniUpisUrl = 'http://localhost:8080/novozarazeni';
 
     httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
