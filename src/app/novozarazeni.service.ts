@@ -9,7 +9,7 @@ import { catchError, tap } from "rxjs/operators";
 })
 export class NovozarazeniService {
 
-    private novozarazeniUpisUrl = 'http://localhost:8080/novozarazeni';
+    private novozarazeniUrl = 'http://localhost:8080/novozarazeni';
 
     httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -20,11 +20,29 @@ export class NovozarazeniService {
     ){}
 
     addNovozarazeni(novozarazeni: Novozarazeni): Observable<Novozarazeni>{
-        return this.http.post<Novozarazeni>(this.novozarazeniUpisUrl, novozarazeni, this.httpOptions).pipe(
+        return this.http.post<Novozarazeni>(this.novozarazeniUrl, novozarazeni, this.httpOptions).pipe(
             tap((newNovozarazeni: Novozarazeni) => console.log(`dodan novozarazeni w/ IME=${newNovozarazeni.ime}`)),
             catchError(this.handleError<Novozarazeni>('addNovozarazeni'))
         );
     }
+
+    getNovozarazeni(): Observable<Novozarazeni[]>{
+        return this.http.get<Novozarazeni[]>(this.novozarazeniUrl)
+        .pipe(
+            tap(_ => console.log('dohvaceni novozarazeni')),
+            catchError(this.handleError<Novozarazeni[]>('getNovozarazeni', []))
+        );
+    }
+
+    getByParameters(ime: string, prezime: string, hospitaliziran: string): Observable<Novozarazeni> {
+        const url = `${this.novozarazeniUrl}/${ime}/${prezime}/${hospitaliziran}`;
+        return this.http.get<Novozarazeni>(url)
+          .pipe(
+            tap(_ => console.log(`fetched novozarazemi ime=${ime}, prezime=${prezime}`)),
+            catchError(this.handleError<Novozarazeni>(`getStudent ime=${ime}, prezime=${prezime}`))
+          );
+      }
+    
 
     private handleError<T>(operation = 'operation', result?: T) {
         return (error: any): Observable<T> => {

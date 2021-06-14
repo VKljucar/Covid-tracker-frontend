@@ -1,0 +1,19 @@
+<div class="container" >
+<h2>Popis novozaraženih</h2>
+<button class="pretrazi" (click)="getNovozarazeni()">
+    <span>Pretraži</span>
+</button>
+    <table>
+        <tr>
+          <th>Ime</th>
+          <th>Prezime</th>
+          <th>Dob</th>
+          <th>Hospitaliziran</th>
+        </tr>
+        <tr *ngFor="let novozarazeni of novozarazeniList">
+          <td>{{novozarazeni.ime}}</td>
+          <td>{{novozarazeni.prezime}}</td>
+          <td>{{novozarazeni.datRodenja}}</td>
+          <td>{{novozarazeni.hospitaliziran}}</td>
+      </table>
+</div>

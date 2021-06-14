@@ -23,11 +23,11 @@
       <label for="hospitaliziran" class="col-25">Hospitaliziran</label>
       <div>
         <label for="hospitaliziran" id="hosp1" class="hosp">Da</label>
-        <input type="radio" id="hosp" name="hospitaliziran" value="D" #hospitaliziran>
+        <input type="radio" id="hosp" name="hospitaliziran" value="D" (click)="hospitaliziran.value = 'D'"  #hospitaliziran>
       </div>
       <div>
         <label for="hospitaliziran" class="hosp">Ne</label>
-        <input type="radio" id="hosp" name="hospitaliziran" value="N" #hospitaliziran>
+        <input type="radio" id="hosp" name="hospitaliziran" value="N" (click)="hospitaliziran.value = 'N'" #hospitaliziran>
       </div>
       </div>
       <br/>
@@ -35,7 +35,7 @@
       <input  type="number" class="lokacija" name="lokacija" #lokacija>
     </form>
     <br/>
-    <button class="dodaj"  (click)="add(1, ime.value, prezime.value, datRodenja.value, adresa.value, telefon.value, email.value, hospitaliziran.value, +lokacija.value); ime.value=''; prezime.value=''; datRodenja.value=''; adresa.value=''; telefon.value=''; email.value=''">
+    <button class="dodaj"  (click)="add(1, ime.value, prezime.value, datRodenja.value, adresa.value, telefon.value, email.value, hospitaliziran.value, +lokacija.value);">
         <span>+ Dodaj</span>
     </button>
   </div>
