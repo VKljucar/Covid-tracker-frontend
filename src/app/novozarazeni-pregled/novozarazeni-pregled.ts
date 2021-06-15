@@ -26,15 +26,10 @@ export class NovozarazeniPregledComponent implements OnInit{
             .subscribe(novozarazeni => this.novozarazeniList = novozarazeni)
     }
 
-    getByParameters(): void {
-        const ime = 'Ime2';
-        const prezime = 'Prezime3';
-        const hospitaliziran = 'N';
-
+    getByParameters(ime: string, prezime: string, hospitaliziran: string): void {
         this.novozarazeniService.getByParameters(ime, prezime, hospitaliziran)
-          .subscribe(novozarazeni => {
-            this.novozarazeni = novozarazeni;
-          });
+          .subscribe(novozarazeni => this.novozarazeniList = novozarazeni
+        );
       }
     
 }

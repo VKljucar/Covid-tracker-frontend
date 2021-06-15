@@ -1,6 +1,22 @@
 <div class="container" >
 <h2>Popis novozaraženih</h2>
-<button class="pretrazi" (click)="getNovozarazeni()">
+<div>
+<label for="ime" class="col-25">Ime</label>
+<input type="text" class="ime" name="ime" #ime>
+</div>
+<div>
+<label for="prezime" class="col-25">Prezime</label>
+<input type="text" class="prezime" name="prezime" #prezime>
+</div>
+<div>
+<label for="hosp" class="col-25">Hospitaliziran</label>
+<select name="hosp" id="cars" #hospitaliziran>
+  <option value=""></option>
+  <option value="D">Da</option>
+  <option value="N">Ne</option>
+</select>
+</div>
+<button class="pretrazi" (click)="getByParameters(ime.value, prezime.value, hospitaliziran.value)">
     <span>Pretraži</span>
 </button>
     <table>

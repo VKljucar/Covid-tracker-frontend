@@ -35,6 +35,8 @@ export class NovozarazeniUpisComponent {
             .subscribe(novozarazeni => {
                 this.novozarazeni.push(novozarazeni);
             })
+        alert("dodali ste novu osobu!");
+        location.reload();
     }
 
 }

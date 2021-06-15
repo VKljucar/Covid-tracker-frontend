@@ -34,12 +34,12 @@ export class NovozarazeniService {
         );
     }
 
-    getByParameters(ime: string, prezime: string, hospitaliziran: string): Observable<Novozarazeni> {
-        const url = `${this.novozarazeniUrl}/${ime}/${prezime}/${hospitaliziran}`;
-        return this.http.get<Novozarazeni>(url)
+    getByParameters(ime: string, prezime: string, hospitaliziran: string): Observable<Novozarazeni[]> {
+        const url = `${this.novozarazeniUrl}/param?ime=${ime}&prezime=${prezime}&hospitaliziran=${hospitaliziran}`;
+        return this.http.get<Novozarazeni[]>(url)
           .pipe(
             tap(_ => console.log(`fetched novozarazemi ime=${ime}, prezime=${prezime}`)),
-            catchError(this.handleError<Novozarazeni>(`getStudent ime=${ime}, prezime=${prezime}`))
+            catchError(this.handleError<Novozarazeni[]>(`getStudent ime=${ime}, prezime=${prezime}`))
           );
       }
     
