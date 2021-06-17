@@ -9,7 +9,7 @@ import { NovozarazeniService } from "../novozarazeni.service";
 })
 export class NovozarazeniUpisComponent {
 
-    novozarazeni!: Novozarazeni[];
+    novozarazeni: Novozarazeni[];
     
     constructor(
         private novozarazeniService: NovozarazeniService

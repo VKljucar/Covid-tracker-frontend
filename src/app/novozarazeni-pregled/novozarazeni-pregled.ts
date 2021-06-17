@@ -9,8 +9,7 @@ import { NovozarazeniService } from '../novozarazeni.service';
 })
 export class NovozarazeniPregledComponent implements OnInit{
 
-    novozarazeniList!: Novozarazeni[];
-    novozarazeni!: Novozarazeni;
+    novozarazeniList: Novozarazeni[];
 
     constructor(
         private novozarazeniService: NovozarazeniService

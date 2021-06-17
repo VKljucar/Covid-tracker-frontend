@@ -4,14 +4,14 @@
         <div class="sidebar">
             <h3>{{title}}</h3>
             <ul>
-                <li><a routerLink="/login">Login</a></li>
-                <li><a routerLink="/root">Dashboard</a></li>
-                <li><a routerLink="/novozarazeni-upis">Upis novozaraženih</a></li>
-                <li><a routerLink="/novozarazeni-pregled">Pregled novozaraženih</a></li>
-                <li><a href="#">Upis cijepljenih</a></li>
-                <li><a href="#">Pregled cijepljenih</a></li>
-                <li><a href="#">Dodavanje korisnika</a></li>
-                <li id="logout"><a routerLink="/login">logout</a></li>
+                <li *ngIf="!isUserLoggedIn()"><a routerLink="/login">Login</a></li>
+                <li *ngIf="isUserLoggedIn()"><a routerLink="/root" >Dashboard</a></li>
+                <li *ngIf="isUserLoggedIn()"><a routerLink="/novozarazeni-upis">Upis novozaraženih</a></li>
+                <li *ngIf="isUserLoggedIn()"><a routerLink="/novozarazeni-pregled">Pregled novozaraženih</a></li>
+                <li *ngIf="isUserLoggedIn()"><a href="#">Upis cijepljenih</a></li>
+                <li *ngIf="isUserLoggedIn()"><a href="#">Pregled cijepljenih</a></li>
+                <li *ngIf="isUserLoggedIn()"><a href="#">Dodavanje korisnika</a></li>
+                <li id="logout" (click)="logout()" *ngIf="isUserLoggedIn()"><a href="">logout</a></li>
             </ul> 
         </div>
     </div>

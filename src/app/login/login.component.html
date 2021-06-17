@@ -1,13 +1,40 @@
-
-<div class="container">
-  <h2>login</h2>
-  <form>
-    <input type="text" class="email" placeholder="email" #korisnickoIme>
-    <br/>
-    <input type="text" class="pwd" placeholder="password" #lozinka>
-  </form>
-  <br/>
-  <button class="signin" (click)="getUser(korisnickoIme.value, lozinka.value)">
-    <span>sign in</span>
-  </button>
+<div class="h-100">
+  <div class="container">
+      <div class="row justify-content-center pt-5">
+          <div class="col text-center">
+              <h2 class="display-3">login</h2>
+          </div>
+      </div>
+      <div class="row justify-content-center">
+          <div class="col-sm-12 col-md-10 col-lg-6 h-100">
+              <div class="card mt-5">
+                  <div class="card-body">
+                      <form #authenticationForm="ngForm" class="form-signin" name="authenticationForm">
+                          <div class="text-center mb-4">
+                          </div>
+                          <div class="form-label-group mb-3">
+                              <input [(ngModel)]="userCredentials.username" [disabled]="authenticating" appInputAutofocus
+                                  autocomplete="username" class="form-control email" name="username"
+                                  placeholder="username" required type="username">
+                          </div>
+                          <div class="form-label-group">
+                              <input [(ngModel)]="userCredentials.password" [disabled]="authenticating"
+                                  autocomplete="current-password" class="form-control pwd" name="password"
+                                  placeholder="password" required type="password">
+                          </div>
+                          <button (click)="login()" 
+                              [disabled]="!authenticationForm.valid || authenticating"
+                              class="btn btn-lg btn-primary btn-block mt-3 signin" type="submit">login <span
+                                  class="spinner-border spinner-border-sm " role="status" aria-hidden="true"
+                                  *ngIf="authenticating"></span>
+                          </button>
+                      </form>
+                      <div class="alert alert-danger mt-2" *ngIf="loginFailed">
+                        Error
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>

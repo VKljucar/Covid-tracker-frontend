@@ -26,7 +26,7 @@ h2{
   padding:40px;
   font-weight:lighter;
   text-transform:uppercase;
-  color:#414141;
+  color:#ff5722;
   font-family: sans-serif;
 }
 
@@ -63,6 +63,7 @@ input{
   font-weight:lighter;
   -webkit-transition:.5s;
   transition:.5s;
+  margin-bottom: 15px;
 }
 
 
