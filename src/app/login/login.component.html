@@ -22,6 +22,9 @@
                                   autocomplete="current-password" class="form-control pwd" name="password"
                                   placeholder="password" required type="password">
                           </div>
+                          <div class="alert alert-danger mt-2" *ngIf="loginFailed">
+                            Neispravno korisničko ime ili lozinka!
+                          </div>
                           <button (click)="login()" 
                               [disabled]="!authenticationForm.valid || authenticating"
                               class="btn btn-lg btn-primary btn-block mt-3 signin" type="submit">login <span
@@ -29,9 +32,7 @@
                                   *ngIf="authenticating"></span>
                           </button>
                       </form>
-                      <div class="alert alert-danger mt-2" *ngIf="loginFailed">
-                        Error
-                      </div>
+                      
                   </div>
               </div>
           </div>

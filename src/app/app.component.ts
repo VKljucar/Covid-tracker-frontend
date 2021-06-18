@@ -10,6 +10,7 @@ import { User } from './user/user';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
+  
   title = 'covid-tracker';
 
   constructor(
@@ -22,6 +23,7 @@ export class AppComponent implements OnInit{
     this.userService.getCurrentUser().subscribe((currentUser: User) => {
       this.userService.currentUser = currentUser;
     });
+    
   }
 
   logout() {

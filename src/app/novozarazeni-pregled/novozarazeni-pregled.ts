@@ -30,5 +30,10 @@ export class NovozarazeniPregledComponent implements OnInit{
           .subscribe(novozarazeni => this.novozarazeniList = novozarazeni
         );
       }
+      
+    delete(id: number): void{
+        this.novozarazeniService.deleteNovozarazeni(id).subscribe();
+        location.reload();
+    }
     
 }

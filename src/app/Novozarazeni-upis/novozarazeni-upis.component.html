@@ -33,7 +33,10 @@
       <br/>
       <div [hidden]="hospitaliziran.value == 'N'">
       <label for="lokacija" class="col-25" id="lokacija">Lokacija</label>
-      <input  type="number" class="lokacija" name="lokacija" #lokacija>
+      <select name="lokacija" class="lokacija" #lokacija>
+        <option [selected]="hospitaliziran.value == 'N'" value="0"></option>
+        <option  [value]="bolnica.id" *ngFor="let bolnica of bolnice" >{{bolnica.naziv}}</option>
+      </select>
       </div>
     </form>
     <br/>

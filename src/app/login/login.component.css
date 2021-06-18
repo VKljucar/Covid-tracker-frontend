@@ -40,7 +40,7 @@ input{
 
 .signin{
   background-color: #ff5722;
-  margin: 40px 0px 0px 130px;
+  margin: 20px 0px 0px 130px;
   border-radius: 5px;
   transition: 0.2s all ease-in;
 }
@@ -110,4 +110,16 @@ button{
 }
 .pwd:focus::-webkit-input-placeholder{
   color:  #ff5722;
+}
+
+.alert{
+    clear: both;
+    font-family: sans-serif;
+    background: lightcoral;
+    padding: 10px;
+    border-radius: 5px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    color: whitesmoke;
 }

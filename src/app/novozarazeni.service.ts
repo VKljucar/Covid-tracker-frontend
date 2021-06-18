@@ -39,9 +39,17 @@ export class NovozarazeniService {
         return this.http.get<Novozarazeni[]>(url)
           .pipe(
             tap(_ => console.log(`fetched novozarazemi ime=${ime}, prezime=${prezime}`)),
-            catchError(this.handleError<Novozarazeni[]>(`getStudent ime=${ime}, prezime=${prezime}`))
+            catchError(this.handleError<Novozarazeni[]>(`getByParameters ime=${ime}, prezime=${prezime}`))
           );
       }
+
+    deleteNovozarazeni(id: number): Observable<Novozarazeni>{
+        const url = `${this.novozarazeniUrl}/${id}`;
+        return this.http.delete<Novozarazeni>(url).pipe(
+            tap(_ => console.log(`deleted novozarazemi id=${id}`)),
+            catchError(this.handleError<Novozarazeni>(`delete novozarazeni id=${id}`))
+        );
+    }
     
 
     private handleError<T>(operation = 'operation', result?: T) {

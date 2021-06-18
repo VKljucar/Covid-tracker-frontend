@@ -28,8 +28,6 @@ export class LoginComponent implements OnInit{
   
     ngOnInit(): void {
       this.userCredentials = new UserCredentials();
-      this.userCredentials.username = "vkljucar";
-      this.userCredentials.password = "test";
     }
   
   
@@ -47,7 +45,6 @@ export class LoginComponent implements OnInit{
       localStorage.setItem('token', jwtToken.token);
       this.userService.getCurrentUser().subscribe((currentUser: User) => this.userService.currentUser = currentUser);
       this.router.navigate(['/novozarazeni-pregled']);
-      alert('radi');
     }
 
 }

@@ -11,6 +11,7 @@
                 <li *ngIf="isUserLoggedIn()"><a href="#">Upis cijepljenih</a></li>
                 <li *ngIf="isUserLoggedIn()"><a href="#">Pregled cijepljenih</a></li>
                 <li *ngIf="isUserLoggedIn()"><a href="#">Dodavanje korisnika</a></li>
+                <li id="user" *ngIf="isUserLoggedIn()">user</li>
                 <li id="logout" (click)="logout()" *ngIf="isUserLoggedIn()"><a href="">logout</a></li>
             </ul> 
         </div>

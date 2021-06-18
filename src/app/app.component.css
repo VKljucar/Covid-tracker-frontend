@@ -87,6 +87,12 @@ body{
   width: 100%;
 }
 
+#user{
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+}
+
 #menu-button{
   padding: 5px 10px 5px 10px;
   background-color: white;
