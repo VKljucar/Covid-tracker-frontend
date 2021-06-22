@@ -112,3 +112,12 @@ body{
     display: none !important;
   }
 }
+
+li span {
+  color: gray;
+  padding-left: 15px;
+}
+
+#user:hover {
+  background-color: ivory;
+}

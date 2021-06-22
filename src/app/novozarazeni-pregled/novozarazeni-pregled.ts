@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminAuthAccessService } from '../access/admin-access.service';
 import { Novozarazeni } from '../novozarazeni';
 import { NovozarazeniService } from '../novozarazeni.service';
 

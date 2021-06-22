@@ -9,7 +9,9 @@ import { LoginComponent } from './login/login.component';
 import { NovozarazeniPregledComponent } from './novozarazeni-pregled/novozarazeni-pregled';
 import { NovozarazeniUpisComponent } from './novozarazeni-upis/novozarazeni-upis.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
-import { AuthExpiredInterceptor } from './interceptors/auth-expire-.interceptor';
+import { AuthExpiredInterceptor } from './interceptors/auth-expired.interceptor';
+import { ForbiddenPageComponent } from './forbidden-access/forbidden-access.component';
+import { DashboardComponent } from './dashboard/dashboard-component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { AuthExpiredInterceptor } from './interceptors/auth-expire-.interceptor'
     AppComponent,
     LoginComponent,
     NovozarazeniPregledComponent,
-    NovozarazeniUpisComponent
+    NovozarazeniUpisComponent,
+    ForbiddenPageComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

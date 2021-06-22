@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit{
     successfulLogin(jwtToken: JwtToken) {
       localStorage.setItem('token', jwtToken.token);
       this.userService.getCurrentUser().subscribe((currentUser: User) => this.userService.currentUser = currentUser);
-      this.router.navigate(['/novozarazeni-pregled']);
+      this.router.navigate(['/dashboard']);
     }
 
 }

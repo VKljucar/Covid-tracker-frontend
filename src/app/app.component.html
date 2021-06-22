@@ -5,13 +5,16 @@
             <h3>{{title}}</h3>
             <ul>
                 <li *ngIf="!isUserLoggedIn()"><a routerLink="/login">Login</a></li>
-                <li *ngIf="isUserLoggedIn()"><a routerLink="/root" >Dashboard</a></li>
+                <li *ngIf="isUserLoggedIn()"><a routerLink="/dashboard">Dashboard</a></li>
                 <li *ngIf="isUserLoggedIn()"><a routerLink="/novozarazeni-upis">Upis novozaraženih</a></li>
                 <li *ngIf="isUserLoggedIn()"><a routerLink="/novozarazeni-pregled">Pregled novozaraženih</a></li>
                 <li *ngIf="isUserLoggedIn()"><a href="#">Upis cijepljenih</a></li>
                 <li *ngIf="isUserLoggedIn()"><a href="#">Pregled cijepljenih</a></li>
-                <li *ngIf="isUserLoggedIn()"><a href="#">Dodavanje korisnika</a></li>
-                <li id="user" *ngIf="isUserLoggedIn()">user</li>
+                <li *ngIf="isUserLoggedIn() && isRoleAdmin()"><a href="#">Dodavanje korisnika</a></li>
+                <li id="user" *ngIf="isUserLoggedIn()">
+                  <span id="role" >{{userService?.currentUser?.authorities}}
+                  </span>
+                </li>
                 <li id="logout" (click)="logout()" *ngIf="isUserLoggedIn()"><a href="">logout</a></li>
             </ul> 
         </div>

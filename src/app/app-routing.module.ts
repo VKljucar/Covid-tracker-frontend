@@ -4,11 +4,12 @@ import { LoginComponent } from './login/login.component';
 import { AppComponent } from './app.component';
 import { NovozarazeniUpisComponent } from './novozarazeni-upis/novozarazeni-upis.component';
 import { NovozarazeniPregledComponent } from './novozarazeni-pregled/novozarazeni-pregled';
+import { DashboardComponent } from './dashboard/dashboard-component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login'},
   { path: 'login', component: LoginComponent },
-  { path: 'root', component: AppComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'novozarazeni-upis', component: NovozarazeniUpisComponent },
   { path: 'novozarazeni-pregled', component: NovozarazeniPregledComponent }
 ];

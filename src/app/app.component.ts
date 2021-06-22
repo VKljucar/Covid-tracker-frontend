@@ -3,6 +3,7 @@ import { UserService } from './user/user.service';
 import { LoginService } from './login/login.service';
 import { Router } from '@angular/router';
 import { User } from './user/user';
+import { Authority } from './constants/authority.constants';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ import { User } from './user/user';
 export class AppComponent implements OnInit{
   
   title = 'covid-tracker';
+  admin = 'test';
 
   constructor(
     private loginService: LoginService,
@@ -23,7 +25,6 @@ export class AppComponent implements OnInit{
     this.userService.getCurrentUser().subscribe((currentUser: User) => {
       this.userService.currentUser = currentUser;
     });
-    
   }
 
   logout() {
@@ -35,4 +36,12 @@ export class AppComponent implements OnInit{
   isUserLoggedIn(): boolean {
     return !!this.userService.currentUser;
   }
+
+  isRoleAdmin(): boolean {
+    if (this.userService.currentUser) {
+        return this.userService.currentUser.authorities.some((authority: string) => authority === Authority.ADMIN);
+    } else {
+        return false;
+    }
+}
 }

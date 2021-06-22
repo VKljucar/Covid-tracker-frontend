@@ -69,3 +69,6 @@ input, select{
   text-transform: uppercase;
 }
 
+#chartContainer > a{
+  display: none;
+}
