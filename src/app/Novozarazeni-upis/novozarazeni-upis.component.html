@@ -1,38 +1,38 @@
 <div class="container">
-    <h2>Upis novozaraženih</h2>
+    <h2>{{'upisNovozarazeni.title' | translate}}</h2>
     <form>
-      <label for="ime" class="col-25">Ime</label>
+      <label for="ime" class="col-25">{{'upisNovozarazeni.ime' | translate}}</label>
       <input type="text" class="ime" name="ime" #ime>
       <br/>
-      <label for="prezime" class="col-25">Prezime</label>
+      <label for="prezime" class="col-25">{{'upisNovozarazeni.prezime' | translate}}</label>
       <input type="text" class="prezime" name="prezime" #prezime>
       <br/>
-      <label for="datRodenja" class="col-25">Datum rođenja</label>
+      <label for="datRodenja" class="col-25">{{'upisNovozarazeni.datRodenja' | translate}}</label>
       <input type="date" class="datum" name="datRodenja" #datRodenja>
       <br/>
-      <label for="adresa" class="col-25">Adresa</label>
+      <label for="adresa" class="col-25">{{'upisNovozarazeni.adresa' | translate}}</label>
       <input type="text" class="adresa" name="adresa" #adresa>
       <br/>
-      <label for="telefon" class="col-25">Telefon</label>
+      <label for="telefon" class="col-25">{{'upisNovozarazeni.telefon' | translate}}</label>
       <input type="text" class="telefon" name="telefon" #telefon>
       <br/>
-      <label for="email" class="col-25">Email</label>
+      <label for="email" class="col-25">{{'upisNovozarazeni.email' | translate}}</label>
       <input type="text" class="email" name="email" #email>
       <br/>
       <div id="hospital">
-      <label for="hospitaliziran" class="col-25">Hospitaliziran</label>
+      <label for="hospitaliziran" class="col-25">{{'upisNovozarazeni.hosp' | translate}}</label>
       <div>
-        <label for="hospitaliziran" id="hosp1" class="hosp">Da</label>
+        <label for="hospitaliziran" id="hosp1" class="hosp">{{'upisNovozarazeni.da' | translate}}</label>
         <input type="radio" id="hosp" name="hospitaliziran" value="D" (click)="hospitaliziran.value = 'D'"  #hospitaliziran>
       </div>
       <div>
-        <label for="hospitaliziran" class="hosp">Ne</label>
+        <label for="hospitaliziran" class="hosp">{{'upisNovozarazeni.ne' | translate}}</label>
         <input type="radio" id="hosp" name="hospitaliziran" value="N" (click)="hospitaliziran.value = 'N'" #hospitaliziran>
       </div>
       </div>
       <br/>
       <div [hidden]="hospitaliziran.value == 'N'">
-      <label for="lokacija" class="col-25" id="lokacija">Lokacija</label>
+      <label for="lokacija" class="col-25" id="lokacija">{{'upisNovozarazeni.lokacija' | translate}}</label>
       <select name="lokacija" class="lokacija" #lokacija>
         <option [selected]="hospitaliziran.value == 'N'" value="0"></option>
         <option  [value]="bolnica.id" *ngFor="let bolnica of bolnice" >{{bolnica.naziv}}</option>
@@ -41,7 +41,7 @@
     </form>
     <br/>
     <button class="dodaj"  (click)="add(1, ime.value, prezime.value, datRodenja.value, adresa.value, telefon.value, email.value, hospitaliziran.value, +lokacija.value);">
-        <span>+ Dodaj</span>
+        <span>{{'upisNovozarazeni.gumb' | translate}}</span>
     </button>
   </div>
   

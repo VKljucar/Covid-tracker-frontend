@@ -13,8 +13,6 @@ export class UserService {
 
     currentUser: User | null;
 
-    private usersUrl = `${this.usrUrl}/api/user`;
-
     constructor(private http: HttpClient) { }
 
     getCurrentUser(): Observable<User> {

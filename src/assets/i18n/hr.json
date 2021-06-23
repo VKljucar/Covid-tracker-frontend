@@ -1,0 +1,56 @@
+{
+    "language": {
+      "croatian": "Hr",
+      "english": "En"
+    },
+    "app-root": {
+        "login": "Prijava",
+        "dashboard": "Dashboard",
+        "upis-novozaraženih": "Upis novozaraženih",
+        "pregled-novozaraženih": "Pregled novozaraženih",
+        "upis-cijepljenih": "Upis cijepljenih",
+        "pregled-cijepljenih": "Pregled cijepljenih",
+        "dodavanje-korisnika": "Dodavanje korisnika",
+        "logout": "Odjava"
+      },
+      "login": {
+        "login": "Prijava",
+        "username": "Korisnicko ime",
+        "password": "Lozinka",
+        "alert": "Neispravno korisničko ime ili lozinka!",
+        "button": "Prijava"
+      },
+      "upisNovozarazeni": {
+        "title": "UPIS NOVOZARAŽENIH",
+        "ime": "Ime",
+        "prezime": "Prezime",
+        "datRodenja": "Datum rođenja",
+        "adresa": "Adresa",
+        "telefon": "Telefon",
+        "email": "Email",
+        "hosp": "Hospitaliziran",
+        "lokacija": "Lokacija",
+        "da": "Da",
+        "ne": "Ne",
+        "gumb": "+ Dodaj"
+      },
+      "pregledNovozarazeni": {
+        "title": "POPIS NOVOZARAŽENIH",
+        "ime1": "Ime",
+        "prezime1": "Prezime",
+        "hosp1": "Hospitaliziran",
+        "ime": "Ime",
+        "prezime": "Prezime",
+        "hosp": "Hospitaliziran",
+        "datRodenja": "Dob",
+        "da": "Da",
+        "ne": "Ne",
+        "trazi": "Pretraži"
+      },
+      "dashboard": {
+        "novi": "Novozaraženi",
+        "hosp": "Hospitalizirani",
+        "cijep": "Cijepljeni"
+      }
+  }
+  

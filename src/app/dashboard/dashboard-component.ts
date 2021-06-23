@@ -16,7 +16,6 @@ export class DashboardComponent implements OnInit {
   allCijepljeni;
   cijepljeniForDay;
   map: number[];
-  test = 5;
 
   constructor(
     private dashboardService: DashboardService
@@ -45,7 +44,7 @@ export class DashboardComponent implements OnInit {
         {
           type: "column", // Change type to "bar", "area", "spline", "pie",etc.
           dataPoints: [
-            { label: "1", y: Number(this.map[4]) },
+            { label: "1", y: 3},
             { label: "2", y: 2 },
             { label: "3", y: 3 },
             { label: "4", y: 4 },
@@ -70,7 +69,7 @@ export class DashboardComponent implements OnInit {
         {
           type: "pie", // Change type to "bar", "area", "spline", "pie",etc.
           dataPoints: [
-            { label: "Ponedjeljak", y: this.test },
+            { label: "Ponedjeljak", y: 21 },
             { label: "Utorak", y: 15 },
             { label: "Srijeda", y: 25 },
             { label: "Četvrtak", y: 30 },

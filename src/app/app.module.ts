@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from "@angular/common";
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -12,7 +12,12 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { AuthExpiredInterceptor } from './interceptors/auth-expired.interceptor';
 import { ForbiddenPageComponent } from './forbidden-access/forbidden-access.component';
 import { DashboardComponent } from './dashboard/dashboard-component';
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -28,7 +33,17 @@ import { DashboardComponent } from './dashboard/dashboard-component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    TranslateModule.forRoot(
+      {
+        loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+        },
+        defaultLanguage: 'hr'
+      }
+    )
   ],
   providers: [
     {

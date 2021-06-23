@@ -2,7 +2,7 @@
   <div class="container">
       <div class="row justify-content-center pt-5">
           <div class="col text-center">
-              <h2 class="display-3">login</h2>
+              <h2 class="display-3">{{'login.login' | translate}}</h2>
           </div>
       </div>
       <div class="row justify-content-center">
@@ -15,19 +15,19 @@
                           <div class="form-label-group mb-3">
                               <input [(ngModel)]="userCredentials.username" [disabled]="authenticating" appInputAutofocus
                                   autocomplete="username" class="form-control email" name="username"
-                                  placeholder="username" required type="username">
+                                  placeholder="{{'login.username' | translate}}" required type="username">
                           </div>
                           <div class="form-label-group">
                               <input [(ngModel)]="userCredentials.password" [disabled]="authenticating"
                                   autocomplete="current-password" class="form-control pwd" name="password"
-                                  placeholder="password" required type="password">
+                                  placeholder="{{'login.password' | translate}}" required type="password">
                           </div>
                           <div class="alert alert-danger mt-2" *ngIf="loginFailed">
-                            Neispravno korisničko ime ili lozinka!
+                            {{'login.alert' | translate}}
                           </div>
                           <button (click)="login()" 
                               [disabled]="!authenticationForm.valid || authenticating"
-                              class="btn btn-lg btn-primary btn-block mt-3 signin" type="submit">login <span
+                              class="btn btn-lg btn-primary btn-block mt-3 signin" type="submit">{{'login.button' | translate}} <span
                                   class="spinner-border spinner-border-sm " role="status" aria-hidden="true"
                                   *ngIf="authenticating"></span>
                           </button>

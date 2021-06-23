@@ -3,19 +3,29 @@
     <div class="wrapper">
         <div class="sidebar">
             <h3>{{title}}</h3>
+            <div style="margin-bottom: 20px;">
+                  <div  class="language">
+                    <div>
+                      <button (click)="onLanguageChange('hr')" *ngIf="currentLanguage == 'En'"
+                      >{{'language.croatian' | translate}}</button>
+                      <button (click)="onLanguageChange('en')" *ngIf="currentLanguage !== ('' || 'En')"
+                      >{{'language.english' | translate}}</button>
+                    </div>
+                  </div>
+            </div>
             <ul>
-                <li *ngIf="!isUserLoggedIn()"><a routerLink="/login">Login</a></li>
-                <li *ngIf="isUserLoggedIn()"><a routerLink="/dashboard">Dashboard</a></li>
-                <li *ngIf="isUserLoggedIn()"><a routerLink="/novozarazeni-upis">Upis novozaraženih</a></li>
-                <li *ngIf="isUserLoggedIn()"><a routerLink="/novozarazeni-pregled">Pregled novozaraženih</a></li>
-                <li *ngIf="isUserLoggedIn()"><a href="#">Upis cijepljenih</a></li>
-                <li *ngIf="isUserLoggedIn()"><a href="#">Pregled cijepljenih</a></li>
-                <li *ngIf="isUserLoggedIn() && isRoleAdmin()"><a href="#">Dodavanje korisnika</a></li>
+                <li *ngIf="!isUserLoggedIn()"><a routerLink="/login">{{'app-root.login' | translate}}</a></li>
+                <li *ngIf="isUserLoggedIn()"><a routerLink="/dashboard">{{'app-root.dashboard' | translate}}</a></li>
+                <li *ngIf="isUserLoggedIn()"><a routerLink="/novozarazeni-upis">{{'app-root.upis-novozaraženih' | translate}}</a></li>
+                <li *ngIf="isUserLoggedIn()"><a routerLink="/novozarazeni-pregled">{{'app-root.pregled-novozaraženih' | translate}}</a></li>
+                <li *ngIf="isUserLoggedIn()"><a href="#">{{'app-root.upis-cijepljenih' | translate}}</a></li>
+                <li *ngIf="isUserLoggedIn()"><a href="#">{{'app-root.pregled-cijepljenih' | translate}}</a></li>
+                <li *ngIf="isUserLoggedIn() && isRoleAdmin()"><a href="#">{{'app-root.dodavanje-korisnika' | translate}}</a></li>
                 <li id="user" *ngIf="isUserLoggedIn()">
-                  <span id="role" >{{userService?.currentUser?.authorities}}
+                  <span id="role" >{{userService?.currentUser?.korisnickoIme}}
                   </span>
                 </li>
-                <li id="logout" (click)="logout()" *ngIf="isUserLoggedIn()"><a href="">logout</a></li>
+                <li id="logout" (click)="logout()" *ngIf="isUserLoggedIn()"><a href="">{{'app-root.logout' | translate}}</a></li>
             </ul> 
         </div>
     </div>

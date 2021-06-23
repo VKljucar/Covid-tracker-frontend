@@ -1,30 +1,30 @@
 <div class="container" >
-<h2>Popis novozaraženih</h2>
+<h2>{{'pregledNovozarazeni.title' | translate}}</h2>
 <div>
-<label for="ime" class="col-25">Ime</label>
+<label for="ime" class="col-25">{{'pregledNovozarazeni.ime1' | translate}}</label>
 <input type="text" class="ime" name="ime" #ime>
 </div>
 <div>
-<label for="prezime" class="col-25">Prezime</label>
+<label for="prezime" class="col-25">{{'pregledNovozarazeni.prezime1' | translate}}</label>
 <input type="text" class="prezime" name="prezime" #prezime>
 </div>
 <div>
-<label for="hosp" class="col-25">Hospitaliziran</label>
+<label for="hosp" class="col-25">{{'pregledNovozarazeni.hosp1' | translate}}</label>
 <select name="hosp" id="cars" #hospitaliziran>
   <option value=""></option>
-  <option value="D">Da</option>
-  <option value="N">Ne</option>
+  <option value="D">{{'pregledNovozarazeni.da' | translate}}</option>
+  <option value="N">{{'pregledNovozarazeni.ne' | translate}}</option>
 </select>
 </div>
 <button class="pretrazi" (click)="getByParameters(ime.value, prezime.value, hospitaliziran.value)">
-    <span>Pretraži</span>
+    <span>{{'pregledNovozarazeni.trazi' | translate}}</span>
 </button>
     <table>
         <tr>
-          <th>Ime</th>
-          <th>Prezime</th>
-          <th>Dob</th>
-          <th>Hospitaliziran</th>
+          <th>{{'pregledNovozarazeni.ime' | translate}}</th>
+          <th>{{'pregledNovozarazeni.prezime' | translate}}</th>
+          <th>{{'pregledNovozarazeni.datRodenja' | translate}}</th>
+          <th>{{'pregledNovozarazeni.hosp' | translate}}</th>
         </tr>
         <tr *ngFor="let novozarazeni of novozarazeniList">
           <td>{{novozarazeni.ime}}</td>

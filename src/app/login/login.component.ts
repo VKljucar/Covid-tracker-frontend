@@ -44,7 +44,9 @@ export class LoginComponent implements OnInit{
     successfulLogin(jwtToken: JwtToken) {
       localStorage.setItem('token', jwtToken.token);
       this.userService.getCurrentUser().subscribe((currentUser: User) => this.userService.currentUser = currentUser);
-      this.router.navigate(['/dashboard']);
+      this.router.navigateByUrl('/app-root', { skipLocationChange: true });
+      this.router.navigate(["/dashboard"]);
+
     }
 
 }

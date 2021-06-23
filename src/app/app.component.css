@@ -121,3 +121,19 @@ li span {
 #user:hover {
   background-color: ivory;
 }
+
+.language button{
+  margin-left: 40%;
+  text-transform: uppercase;
+  padding: 4px;
+    background: ivory;
+    border: none;
+    cursor: pointer;
+    border: 1px solid ivory;
+}
+
+.language button:hover{
+  border: 1px solid #ff5722;
+  background-color: #ff5722;
+  color: white;
+}

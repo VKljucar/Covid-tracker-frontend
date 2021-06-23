@@ -1,0 +1,56 @@
+{
+    "language": {
+      "croatian": "Hr",
+      "english": "En"
+    },
+    "app-root": {
+        "login": "Login",
+        "dashboard": "Dashboard",
+        "upis-novozaraženih": "Newly infected - entry",
+        "pregled-novozaraženih": "Newly infected - list",
+        "upis-cijepljenih": "Vaccinated - entry",
+        "pregled-cijepljenih": "Vaccinated - list",
+        "dodavanje-korisnika": "Adding users",
+        "logout": "Logout"
+      },
+      "login": {
+        "login": "Login",
+        "username": "Username",
+        "password": "Password",
+        "alert": "Invalid username or password!",
+        "button": "Login"
+      },
+      "upisNovozarazeni": {
+        "title": "REGISTRATION OF NEWLY INFECTED",
+        "ime": "First name",
+        "prezime": "Last name",
+        "datRodenja": "Date of birth",
+        "adresa": "Adress",
+        "telefon": "Phone number",
+        "email": "Email",
+        "hosp": "Hospitalized",
+        "lokacija": "Location",
+        "da": "Yes",
+        "ne": "No",
+        "gumb": "+ Add"
+      },
+      "pregledNovozarazeni": {
+        "title": "LIST OF NEWLY INFECTED",
+        "ime1": "First name",
+        "prezime1": "Last name",
+        "hosp1": "Hospitalized",
+        "ime": "First name",
+        "prezime": "Last name",
+        "hosp": "Hospitalized",
+        "datRodenja": "Age",
+        "da": "Yes",
+        "ne": "No",
+        "trazi": "Search"
+      },
+      "dashboard": {
+        "novi": "Newly infected",
+        "hosp": "Hospitalized",
+        "cijep": "Vaccinated"
+      }
+  }
+  
