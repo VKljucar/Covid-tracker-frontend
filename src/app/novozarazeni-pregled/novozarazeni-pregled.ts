@@ -19,6 +19,11 @@ export class NovozarazeniPregledComponent implements OnInit{
     ngOnInit(): void{
         this.novozarazeniService.getNovozarazeni()
             .subscribe(novozarazeni => this.novozarazeniList = novozarazeni)
+
+            this.novozarazeniService.getNovozarazeni()
+            .subscribe(res => {
+              console.log(res)
+            });
     }
 
     getNovozarazeni(): void{

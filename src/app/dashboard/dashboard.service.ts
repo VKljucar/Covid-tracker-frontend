@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { catchError, tap, map } from "rxjs/operators";
+import { catchError, tap } from "rxjs/operators";
+import { Dashboard } from "./dashboard";
 
 @Injectable({
     providedIn: 'root'
@@ -64,11 +65,27 @@ export class DashboardService {
         );
     }
 
-    getNovozarazeniByDay(): Observable<number[]>{
-        return this.http.get<number[]>('http://localhost:8080/dashboard/graf1')
+    getNovozarazeniByDay(): Observable<Dashboard[]>{
+        return this.http.get<Dashboard[]>('http://localhost:8080/dashboard/graf1')
         .pipe(
             tap(_ => console.log('dohvaceni novozarazeni')),
-            catchError(this.handleError<number[]>('getNovozarazeniByDay'))
+            catchError(this.handleError<Dashboard[]>('getNovozarazeniByDay'))
+        );
+    }
+
+    getHospitaliziraniByDate(): Observable<Dashboard[]>{
+        return this.http.get<Dashboard[]>('http://localhost:8080/dashboard/graf2')
+        .pipe(
+            tap(_ => console.log('dohvaceni hospitalizirani')),
+            catchError(this.handleError<Dashboard[]>('getHospitaliziraniByDate'))
+        );
+    }
+
+    getCijepljeniByDate(): Observable<Dashboard[]>{
+        return this.http.get<Dashboard[]>('http://localhost:8080/dashboard/graf3')
+        .pipe(
+            tap(_ => console.log('dohvaceni cijepljeni')),
+            catchError(this.handleError<Dashboard[]>('getCijepljeniByDate'))
         );
     }
 
